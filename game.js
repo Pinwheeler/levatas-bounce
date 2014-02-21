@@ -25,7 +25,7 @@ c.height = height;
 
 if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	//On mobile
-	fpsVar = 70;
+	fpsVar = 60;
 	width = document.documentElement.clientWidth;
 	height = document.documentElement.clientHeight;
 }
