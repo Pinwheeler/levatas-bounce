@@ -328,7 +328,7 @@ var Restart = function(){
 var nrOfPlatforms = 14, 
 platforms = [],
 platformWidth = width / 10,
-platformHeight = 40;
+platformHeight = 30;
 
 if( isMobile ) {
 	//On mobile
