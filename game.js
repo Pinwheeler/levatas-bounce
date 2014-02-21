@@ -149,6 +149,10 @@ var player = new (function(){
 	that.image.src = "levatas.png";
 	that.width = 112;
 	that.height = 105;
+	if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		that.width = that.width/2
+		that.height = that.height/2;
+	}
 	that.X = 0;
 	that.Y = 0;
 
@@ -308,6 +312,12 @@ var nrOfPlatforms = 7,
 platforms = [],
 platformWidth = width / 10,
 platformHeight = 20;
+
+if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	//On mobile
+	nrOfPlatforms = 5;
+	platformWidth = platformWidth*2;
+}
 //global (so far) variables are not the best place for storing platform size information, but in case it will be needed to calculate collisions I put it here, not as a Platform attributes
 var generatePlatforms = function(){
 	var position = 0, type;
