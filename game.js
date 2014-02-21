@@ -214,7 +214,7 @@ var player = new (function(){
 	    
 	    
 	    that.jumpSpeed--;
-	    if (that.jumpSpeed == 0) {
+	    if (that.jumpSpeed <= 0) {
 	        that.isJumping = false;
 	        that.isFalling = true;
 	        that.fallSpeed = 1;
@@ -328,7 +328,7 @@ var Restart = function(){
 var nrOfPlatforms = 14, 
 platforms = [],
 platformWidth = width / 10,
-platformHeight = 20;
+platformHeight = 40;
 
 if( isMobile ) {
 	//On mobile
