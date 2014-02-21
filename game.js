@@ -8,9 +8,9 @@ gLoop,
 points = 0,
 globalTilt = 0,
 pointMultiple = 0,
-fpsVar = 60,
+fpsVar = 70,
 state = true,
-maxVel = 8,
+maxVel = 9,
 isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/),
 c = document.getElementById('c'),
 // the canvas itself
@@ -26,7 +26,7 @@ c.height = height;
 
 if( isMobile ) {
 	//On mobile
-	fpsVar = 60;
+	fpsVar = 55;
 	width = document.documentElement.clientWidth;
 	height = document.documentElement.clientHeight;
 }
@@ -391,9 +391,7 @@ function checkKey(e) {
 
 function upCheckKey(e) {
 	e = e || window.event;
-	if (!state) {
-		Restart();
-	}
+
 		if (e.keyCode == 37)
 	{
 		// left key
@@ -404,6 +402,9 @@ function upCheckKey(e) {
 	{
 		if (player.xVel > 0)
 			player.xVel = 0;
+	}
+	else if (!state) {
+		Restart();
 	}
 }
 
