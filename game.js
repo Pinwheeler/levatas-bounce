@@ -379,11 +379,13 @@ function checkKey(e) {
 
 	if (e.keyCode == 37)
 	{
+		e.preventDefault()
 		// left key
 		player.moveLeft();
 	}
 	else if (e.keyCode == 39)
 	{
+		e.preventDefault()
 		// right key
 		player.moveRight();
 	}
@@ -394,12 +396,14 @@ function upCheckKey(e) {
 
 		if (e.keyCode == 37)
 	{
+		e.preventDefault()
 		// left key
 		if (player.xVel < 0)
 			player.xVel = 0;
 	}
 	else if (e.keyCode == 39)
 	{
+		e.preventDefault()
 		if (player.xVel > 0)
 			player.xVel = 0;
 	}
