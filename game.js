@@ -263,7 +263,6 @@ var Platform = function(x, y, type){
 	that.firstColor = '#FF8C00';
 	that.secondColor = '#EEEE00';
 	that.onCollide = function(){
-		jumpSound.play();
 		player.fallStop();
 		var newPointMultiple = ~~(points/250);
 		if (newPointMultiple > pointMultiple){
