@@ -389,9 +389,9 @@ function tilt(tilts)
 	yTilt = tilts[1];
 	globalTilt = xTilt;
 	if (yTilt > 0)
-		player.xVel = 1
+		player.xVel = 8
 	if (yTilt < 0)
-		player.xVel = -1
+		player.xVel = -8
 }
 
 
