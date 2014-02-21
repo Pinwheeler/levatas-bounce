@@ -154,6 +154,7 @@ var player = new (function(){
 		that.image.style.height = 'auto'
 		that.width = that.width/2
 		that.height = that.height/2;
+		that.image.src = "levatas-mobile.png"
 	}
 	that.X = 0;
 	that.Y = 0;
