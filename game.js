@@ -412,8 +412,8 @@ function tilt(tilts)
 	globalTilt = yTilt;
 	if (yTilt > 10)
 		player.xVel = 10;
-	else if (yTilt < 10)
-		player.xVel = 10;
+	else if (yTilt < -10)
+		player.xVel = -10;
 	else
 		player.xVel = yTilt;
 	/*if (yTilt > 0)
