@@ -11,6 +11,7 @@ pointMultiple = 0,
 fpsVar = 60,
 state = true,
 maxVel = 8,
+isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/),
 c = document.getElementById('c'),
 // the canvas itself
 
@@ -23,7 +24,7 @@ c.width = width;
 c.height = height;
 // setting the cavas size
 
-if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+if( isMobile ) {
 	//On mobile
 	fpsVar = 60;
 	width = document.documentElement.clientWidth;
@@ -151,7 +152,7 @@ var player = new (function(){
 	that.image.src = "levatas.png";
 	that.width = 112;
 	that.height = 105;
-	if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	if( isMobile ) {
 		that.image.style.width = '50%'
 		that.image.style.height = 'auto'
 		that.width = that.width/2
@@ -310,7 +311,8 @@ var GameOver = function(){
         ctx.font = "10pt Arial";
         ctx.fillText("GAME OVER", width / 2 - 60, height / 2 - 50);
         ctx.fillText("YOUR RESULT:" + points, width / 2 - 60, height / 2 - 30);
-        ctx.fillText("Tap to Restart",width/2-60, height/2-10);
+        var restartText = (isMobile) ? "Tap to Restart" : "Press Key To Restart";
+        ctx.fillText(restartText,width/2-60, height/2-10);
     }, 100);
 };
 
@@ -328,7 +330,7 @@ platforms = [],
 platformWidth = width / 10,
 platformHeight = 20;
 
-if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+if( isMobile ) {
 	//On mobile
 	nrOfPlatforms = 6;
 	platformWidth = platformWidth*1.5;
@@ -389,6 +391,9 @@ function checkKey(e) {
 
 function upCheckKey(e) {
 	e = e || window.event;
+	if (!state) {
+		Restart();
+	}
 		if (e.keyCode == 37)
 	{
 		// left key
