@@ -25,7 +25,7 @@ c.height = height;
 
 if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	//On mobile
-	fpsVar = 80;
+	fpsVar = 70;
 	width = document.documentElement.clientWidth;
 	height = document.documentElement.clientHeight;
 }
@@ -322,8 +322,8 @@ platformHeight = 20;
 if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	//On mobile
 	nrOfPlatforms = 5;
-	platformWidth = platformWidth*2;
-	platformHeight = platformHeight*0.5;
+	platformWidth = platformWidth*1.5;
+	platformHeight = platformHeight*0.75;
 }
 //global (so far) variables are not the best place for storing platform size information, but in case it will be needed to calculate collisions I put it here, not as a Platform attributes
 var generatePlatforms = function(){
