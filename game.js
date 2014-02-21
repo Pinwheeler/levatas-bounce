@@ -330,7 +330,7 @@ platformHeight = 20;
 
 if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	//On mobile
-	nrOfPlatforms = 5;
+	nrOfPlatforms = 6;
 	platformWidth = platformWidth*1.5;
 	platformHeight = platformHeight*0.75;
 }
