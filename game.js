@@ -382,7 +382,10 @@ if (window.DeviceOrientationEvent) {
 
 function tilt(xTilt,yTilt)
 {
-	player.xVel = xTilt;
+	if (xTilt > 0)
+		player.xVel = 1
+	if (xTilt < 0)
+		player.xVel = -1
 }
 
 
