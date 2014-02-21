@@ -11,6 +11,7 @@ pointMultiple = 0,
 fpsVar = 70,
 state = true,
 maxVel = 9,
+jumpSound = document.getElementById('jump'),
 isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/),
 c = document.getElementById('c'),
 // the canvas itself
@@ -184,6 +185,7 @@ var player = new (function(){
 			that.isJumping = true;
 			that.jumpSpeed = 27;
 			// initial velocity
+			jumpSound.play();
 		}
 	}
 
@@ -321,6 +323,7 @@ var Restart = function(){
 		points = 0;
 		state = 1;
 		player.jump();
+		pointMultiple = 0;
 		GameLoop();
 	};
 }
