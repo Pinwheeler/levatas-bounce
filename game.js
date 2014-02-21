@@ -243,12 +243,12 @@ var player = new (function(){
 	}
 
 	that.moveLeft = function(){
-		that.xVel = -8;
+		that.xVel = -maxVel;
 	}
 
 	that.moveRight = function(){
 
-		that.xVel = 8;
+		that.xVel = maxVel;
 	}
 })();
 
@@ -263,7 +263,7 @@ var Platform = function(x, y, type){
 	that.secondColor = '#EEEE00';
 	that.onCollide = function(){
 		player.fallStop();
-		var newPointMultiple = ~~(points/400);
+		var newPointMultiple = ~~(points/250);
 		if (newPointMultiple > pointMultiple){
 			pointMultiple = newPointMultiple;
 			paintColor = getRandomColor();
@@ -311,7 +311,7 @@ var GameOver = function(){
         ctx.font = "10pt Arial";
         ctx.fillText("GAME OVER", width / 2 - 60, height / 2 - 50);
         ctx.fillText("YOUR RESULT:" + points, width / 2 - 60, height / 2 - 30);
-        var restartText = (isMobile) ? "Tap to Restart" : "Press Key To Restart";
+        var restartText = (isMobile) ? "TAP TO RESTART" : "PRESS KEY TO RESTART";
         ctx.fillText(restartText,width/2-60, height/2-10);
     }, 100);
 };
