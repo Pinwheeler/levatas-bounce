@@ -418,7 +418,7 @@ if (window.DeviceOrientationEvent) {
 
 window.addEventListener('load', function(){
  
- c.addEventListener('touchstart', function(e){
+ ctx.addEventListener('touchstart', function(e){
  	Restart();
   e.preventDefault()
  }, false)
