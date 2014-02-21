@@ -5,6 +5,7 @@ height = window.innerHeight,
 // height of the canvas
 gLoop,
 points = 0,
+globalTilt = 0,
 pointMultiple = 0,
 state = true,
 c = document.getElementById('c'),
@@ -116,6 +117,7 @@ var GameLoop = function(){
 	//change active color to black
 	ctx.fillText("POINTS:" + points, 10, height-10);
 	//and add text in the left-bottom corner of the canvas
+	ctx.fillStyle("TILT: " + globalTilt, 10, height-20);
 
 	if (state)
         gLoop = setTimeout(GameLoop, 1000 / 60);
@@ -382,6 +384,7 @@ if (window.DeviceOrientationEvent) {
 
 function tilt(xTilt,yTilt)
 {
+	globalTilt = xTilt;
 	if (xTilt > 0)
 		player.xVel = 1
 	if (xTilt < 0)
