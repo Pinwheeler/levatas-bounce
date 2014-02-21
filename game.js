@@ -1,3 +1,4 @@
+
 var width = window.innerWidth,
 // width of the canvas
 height = window.innerHeight,
@@ -117,7 +118,7 @@ var GameLoop = function(){
 	ctx.fillText("POINTS:" + points, 10, height-10);
 	//and add text in the left-bottom corner of the canvas
 	ctx.fillText("TILT: " + globalTilt, 10, height-30);
-	ctx.fillText("VEL: " + player.xVel, 10, height-20);
+	ctx.fillText("VEL: " + player.v, 10, height-30);
 
 	if (state)
         gLoop = setTimeout(GameLoop, 1000 / 60);
@@ -382,8 +383,10 @@ if (window.DeviceOrientationEvent) {
     }, true);
 }
 
-function tilt(xTilt,yTilt)
+function tilt(tilts)
 {
+	xTilt = tilts[0];
+	yTilt = tilts[1];
 	globalTilt = xTilt;
 	if (yTilt > 0)
 		player.xVel = 1
@@ -397,6 +400,15 @@ player.jump();
 
 
 GameLoop();
+
+
+
+
+
+
+
+
+
 
 
 
