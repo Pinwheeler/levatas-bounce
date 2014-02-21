@@ -150,6 +150,8 @@ var player = new (function(){
 	that.width = 112;
 	that.height = 105;
 	if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		that.image.style.width = '50%'
+		that.image.style.height = 'auto'
 		that.width = that.width/2
 		that.height = that.height/2;
 	}
