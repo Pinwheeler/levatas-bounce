@@ -9,6 +9,7 @@ globalTilt = 0,
 pointMultiple = 0,
 fpsVar = 60,
 state = true,
+maxVel = 8,
 c = document.getElementById('c'),
 // the canvas itself
 
@@ -411,10 +412,10 @@ function tilt(tilts)
 	xTilt = tilts[1];
 	globalTilt = xTilt;
 	player.xVel = xTilt;
-	if (xTilt > 10)
-		player.xVel = 10;
-	else if (xTilt < -10)
-		player.xVel = -10;
+	if (xTilt > maxVel)
+		player.xVel = maxVel;
+	else if (xTilt < -maxVel)
+		player.xVel = -maxVel;
 		
 	/*if (yTilt > 0)
 		player.xVel = 8
