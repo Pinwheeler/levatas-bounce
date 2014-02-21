@@ -407,15 +407,15 @@ if (window.DeviceOrientationEvent) {
 
 function tilt(tilts)
 {
-	xTilt = tilts[0];
-	yTilt = tilts[1];
-	globalTilt = yTilt;
-	if (yTilt > 10)
+	yTilt = tilts[0];
+	xTilt = tilts[1];
+	globalTilt = xTilt;
+	player.xVel = xTilt;
+	if (xTilt > 10)
 		player.xVel = 10;
-	else if (yTilt < -10)
+	else if (xTilt < -10)
 		player.xVel = -10;
-	else
-		player.xVel = yTilt;
+		
 	/*if (yTilt > 0)
 		player.xVel = 8
 	if (yTilt < 0)
