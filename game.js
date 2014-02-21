@@ -418,10 +418,20 @@ if (window.DeviceOrientationEvent) {
 
 window.addEventListener('load', function(){
  
- ctx.addEventListener('touchstart', function(e){
+ c.addEventListener('touchstart', function(e){
  	Restart();
   e.preventDefault()
  }, false)
+
+  c.addEventListener('touchmove', function(e){
+  e.preventDefault()
+ }, false)
+ 
+ c.addEventListener('touchend', function(e){
+ 	Restart();
+  e.preventDefault()
+ }, false)
+
  
 }, false)
 
