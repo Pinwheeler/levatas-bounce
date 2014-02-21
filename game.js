@@ -314,6 +314,14 @@ var GameOver = function(){
     }, 100);
 };
 
+var Restart = function(){
+	if (!state) {
+		points = 0;
+		state = 1;
+		player.jump();
+	};
+}
+
 var nrOfPlatforms = 7, 
 platforms = [],
 platformWidth = width / 10,
@@ -407,15 +415,15 @@ if (window.DeviceOrientationEvent) {
         tilt([orientation.x * 50, orientation.y * 50]);
     }, true);
 }
-c.addEventListener("touchstart",handleStart, false);
 
-function handleStart(evt) {
-	if (!state) {
-		points = 0;
-		state = 1;
-		player.jump();
-	};
-}
+window.addEventListener('load', function(){
+ 
+ c.addEventListener('touchstart', function(e){
+ 	Restart();
+  e.preventDefault()
+ }, false)
+ 
+}, false)
 
 function tilt(tilts)
 {
