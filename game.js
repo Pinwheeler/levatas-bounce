@@ -1,7 +1,7 @@
 
-var width = 500,
+var width = window.innerWidth,
 // width of the canvas
-height = 900,
+height = window.innerHeight,
 // height of the canvas
 gLoop,
 points = 0,
@@ -295,7 +295,7 @@ var GameOver = function(){
 
 var nrOfPlatforms = 7, 
 platforms = [],
-platformWidth = 70,
+platformWidth = width / 10,
 platformHeight = 20;
 //global (so far) variables are not the best place for storing platform size information, but in case it will be needed to calculate collisions I put it here, not as a Platform attributes
 var generatePlatforms = function(){
@@ -334,6 +334,7 @@ var checkCollision = function(){
 
 document.onkeydown = checkKey;
 document.onkeyup = upCheckKey;
+
 function checkKey(e) {
 	e = e || window.event;
 
@@ -363,6 +364,27 @@ function upCheckKey(e) {
 			player.xVel = 0;
 	}
 }
+
+// Mobile Support
+if (window.DeviceOrientationEvent) {
+    window.addEventListener("deviceorientation", function () {
+        tilt([event.beta, event.gamma]);
+    }, true);
+} else if (window.DeviceMotionEvent) {
+    window.addEventListener('devicemotion', function () {
+        tilt([event.acceleration.x * 2, event.acceleration.y * 2]);
+    }, true);
+} else {
+    window.addEventListener("MozOrientation", function () {
+        tilt([orientation.x * 50, orientation.y * 50]);
+    }, true);
+}
+
+function tilt(xTilt,yTilt)
+{
+	player.xVel = xTilt;
+}
+
 
 player.setPosition(~~((width-player.width)/2),  ~~((height - player.height)/2));
 player.jump();
