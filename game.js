@@ -325,7 +325,7 @@ var Restart = function(){
 	};
 }
 
-var nrOfPlatforms = 10, 
+var nrOfPlatforms = 14, 
 platforms = [],
 platformWidth = width / 10,
 platformHeight = 20;
