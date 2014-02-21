@@ -7,6 +7,7 @@ gLoop,
 points = 0,
 globalTilt = 0,
 pointMultiple = 0,
+fpsVar = 60,
 state = true,
 c = document.getElementById('c'),
 // the canvas itself
@@ -19,6 +20,11 @@ ctx = c.getContext("2d");
 c.width = width;
 c.height = height;
 // setting the cavas size
+
+if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	//On mobile
+	fpsVar = 80;
+}
 
 function getRandomColor() {
     var letters = '0123456789ABCDEF'.split('');
@@ -121,7 +127,7 @@ var GameLoop = function(){
 	ctx.fillText("VEL: " + player.xVel, 10, height-20);
 
 	if (state)
-        gLoop = setTimeout(GameLoop, 1000 / 70);
+        gLoop = setTimeout(GameLoop, 1000 / fpsVar);
 }
 
 var player = new (function(){
