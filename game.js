@@ -319,6 +319,7 @@ var Restart = function(){
 		points = 0;
 		state = 1;
 		player.jump();
+		GameLoop();
 	};
 }
 
