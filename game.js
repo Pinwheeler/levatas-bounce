@@ -117,7 +117,7 @@ var GameLoop = function(){
 	//change active color to black
 	ctx.fillText("POINTS:" + points, 10, height-10);
 	//and add text in the left-bottom corner of the canvas
-	ctx.fillStyle("TILT: " + globalTilt, 10, height-20);
+	ctx.fillText("TILT: " + globalTilt, 10, height-20);
 
 	if (state)
         gLoop = setTimeout(GameLoop, 1000 / 60);
