@@ -1,7 +1,7 @@
 
-var width = window.innerWidth,
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width,
 // width of the canvas
-height = window.innerHeight,
+height = width = (window.innerHeight > 0) ? window.innerHeight : screen.height,
 // height of the canvas
 gLoop,
 points = 0,
