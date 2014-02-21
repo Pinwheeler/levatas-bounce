@@ -1,4 +1,3 @@
-
 var width = (window.innerWidth > 0) ? window.innerWidth : screen.width,
 // width of the canvas
 height = width = (window.innerHeight > 0) ? window.innerHeight : screen.height,
@@ -152,8 +151,8 @@ var player = new (function(){
 	if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		that.image.style.width = '50%'
 		that.image.style.height = 'auto'
-		that.width = that.width/2
-		that.height = that.height/2;
+		//that.width = that.width/2
+		//that.height = that.height/2;
 	}
 	that.X = 0;
 	that.Y = 0;
