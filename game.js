@@ -121,7 +121,7 @@ var GameLoop = function(){
 	ctx.fillText("VEL: " + player.xVel, 10, height-20);
 
 	if (state)
-        gLoop = setTimeout(GameLoop, 1000 / 60);
+        gLoop = setTimeout(GameLoop, 1000 / 70);
 }
 
 var player = new (function(){
