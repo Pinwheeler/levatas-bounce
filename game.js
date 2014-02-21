@@ -24,6 +24,8 @@ c.height = height;
 if( /Android|AppleWebKit|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 	//On mobile
 	fpsVar = 80;
+	width = screen.width;
+	height = screen.height;
 }
 
 function getRandomColor() {
