@@ -11,7 +11,7 @@ pointMultiple = 0,
 fpsVar = 70,
 state = true,
 maxVel = 9,
-jumpSound = document.getElementById('jump'),
+jumpSound = new Audio('jump.wav'),
 isMobile = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/),
 c = document.getElementById('c'),
 // the canvas itself
