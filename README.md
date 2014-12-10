@@ -1,8 +1,8 @@
 Levatas-Bounce
 ==============
 http://pinwheeler.github.io/levatas-bounce/
-Simple HTML5 game made in downtime at Levatas
 
+Simple HTML5 game made in downtime at Levatas
 
 Bounce on the platforms to get a high score.
 
